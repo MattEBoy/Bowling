@@ -26,6 +26,9 @@ namespace Bowling.Controllers
         public IActionResult Index(long? teamid, int pageNum = 1)
         {
             int pageSize = 5;
+
+            ViewBag.SelectedTeam = _context.Teams.Where(t => t.TeamId == teamid).Select(t => t.TeamName).FirstOrDefault() ?? "";
+
             return View(
                 new IndexViewModel
                 { 

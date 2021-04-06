@@ -8,7 +8,8 @@
 <br />
 @foreach (Team t in Model)
 {
-    <a asp-action="Index" asp-controller="Home" 
+    <a class="btn btn-block  @(t.TeamName == @ViewBag.SelectedTeam? "btn-primary" : "btn-outline-secondary")"
+       asp-action="Index" asp-controller="Home" 
        asp-route-teamnm="@t.TeamName"
        asp-route-teamid="@t.TeamId">@t.TeamName</a>
     <br />

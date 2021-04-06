@@ -30,9 +30,19 @@
         </tr>
     }
 </table>
+@if (Model.Team != "")
+{
+    <div page-info="@Model.PageNumberingInfo"
+         page-url-teamid="@Model.TeamId"
+         page-url-teamnm="@Model.Team">
 
-<div page-info="@Model.PageNumberingInfo" page-url-teamid="@Model.TeamId" page-url-teamnm="@Model.Team">
-
-</div>
+    </div>
+}
+else
+{
+    <div page-info="@Model.PageNumberingInfo"
+         page-url-teamnm="@Model.Team">
+    </div>
+}
 
 
